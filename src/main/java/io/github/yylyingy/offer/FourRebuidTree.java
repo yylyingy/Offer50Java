@@ -1,5 +1,6 @@
 package io.github.yylyingy.offer;
 
+
 /**
  * <br> ClassName:
  * <br> Description: todo(这里用一句话描述这个类的作用)
@@ -12,41 +13,48 @@ package io.github.yylyingy.offer;
 class FourRebuidTree {
     public static void main(String[] args) {
 //        前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}
-//        int []pre = {1,2,4,7,3,5,6,8};
-//        int []in =  {4,7,2,   1  ,5,3,8,6};
-        int []pre ={4,1,2,3};
-        int []in = {1,2,3,4};
+        int []pre = {1,2,4,7,3,5,6,8};
+        int []in =  {4,7,2,   1  ,5,3,8,6};
+//        int []pre ={4,1,2,3};
+//        int []in = {1,2,3,4};
         TreeNode treeNode = buildTree(pre,in);
-//        new FourRebuidTree().constructFromPrePost(pre,in);
         System.out.println();
     }
     public static TreeNode buildTree(int [] pre,int [] in) {
-        return buildTree(0,in.length,pre,in);
+        return buildTree(0,in.length - 1,0,in.length -1,pre,in);
     }
-   public static TreeNode buildTree(int leftStart,int end,
-                                    int [] pre,int [] in) {
-        if (leftStart == in.length || leftStart > end) {
+   public static TreeNode buildTree(int startPre,int endPre,int startIn,int endIn, int [] pre,int [] in) {
+        if (startPre > endPre || startIn > endIn) {
             return null;
         }
-        TreeNode root = new TreeNode(pre[leftStart]);
-        if (leftStart == end) {
+        //前序遍历中，第一个节点为root
+       if (startPre >= in.length) {
+           return null;
+       }
+        TreeNode root = new TreeNode(pre[startPre]);
+        //相等时root的左右子节点都为空不用再遍历
+        if (startPre == endPre||startIn==endIn) {
             return root;
         }
-//        if (leftStart == end - 1) {
-//            return root;
-//        }
-        int rootInIn = 0;
-        for (int i = 0;i < end;i ++) {
+        //根据前序遍历找出的根节点算出该根节点在中序遍历中的index；
+        int rootInIn = startIn;
+        for (int i = startIn;i <= endIn && i < in.length;i ++) {
             if (root.val == in[i]) {
+                //根节点在中序遍历中的位置
                 rootInIn = i;
-                break;
             }
         }
-        root.left = buildTree(leftStart + 1,rootInIn,pre,in);
-        root.right = buildTree(leftStart + 1,end     ,pre,in);
+        //root根节点的左子树所有节点个数
+        int leftTreeNodeCount = rootInIn - startIn;
+        //在前序遍历数组中，currentStartPreIndex 到currentEndPreIndex之间的节点个数就是当前root的左子树节点个数
+        int currentStartPreIndex = startPre + 1;
+        int currentEndPreIndex   = startPre + leftTreeNodeCount;
+                                                                        //中序遍历中左子树几点范围个数为rootInIn - 1 - startIn
+        root.left = buildTree(currentStartPreIndex,currentEndPreIndex,startIn,rootInIn - 1,pre,in);
+        //                              前序遍历当前root的右子树范围         中序遍历当前root的右子树范围
+        root.right = buildTree(currentEndPreIndex + 1,endPre,rootInIn + 1,endIn,pre,in);
         return root;
    }
-
 
 
 
