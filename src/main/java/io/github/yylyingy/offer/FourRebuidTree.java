@@ -1,6 +1,4 @@
-package com.alogrim.jianzhioffer;
-
-import java.util.Arrays;
+package io.github.yylyingy.offer;
 
 /**
  * <br> ClassName:
