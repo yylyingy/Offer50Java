@@ -23,6 +23,8 @@ class Sixth {
         if (array.length == 1) {
             return array[0];
         }
+
+        //如果是升序数组且没旋转过，则index为0的第一个数为最小数
         if (array[0] < array[array.length - 1]) {
             return array[0];
         }
@@ -42,6 +44,7 @@ class Sixth {
                 min = array[mid + 1];
                 break;
             }
+            //当除index为1的所有数都遍历了还没找到，则mid =1时为最小数，index为0已经在上面排除了
             if (mid - 1 >= 0 && array[mid - 1] > array[mid]) {
                 min = array[mid];
                 break;
