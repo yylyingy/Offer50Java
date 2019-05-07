@@ -33,7 +33,7 @@ class Sixth {
         //二分查找，数组长度大于等于3，由于旋转前是升序数组，所以旋转后只需要找出某个数小于最后一个数，且这个数
         //的前一个大于这个数，这个数即为最小的数，因为最小数的位置到最后一个数位置之间的数一定小于这个最小数之前的数（最小数位置
         // 不为0的情况）
-        while (low < high) {
+        while (true) {
             mid = (low + high ) / 2;
             if (array[mid] > array[array.length - 1]) {
                 low = mid;
