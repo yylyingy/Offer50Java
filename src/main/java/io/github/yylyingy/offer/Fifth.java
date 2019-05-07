@@ -40,7 +40,7 @@ class Fifth {
             //stack2存放倒序的栈
             stack2.push(stack1.pop());
         }
-        //倒序的栈出栈即为队列的先进后出
+        //倒序的栈出栈即为队列的先进先出
         return stack2.pop();
     }
 }
