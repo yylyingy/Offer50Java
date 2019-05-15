@@ -22,7 +22,7 @@ class CountSum {
     }
 
     static int countSum(int[] items, int sum) {
-        //key item元素，value 元素的出现的次数
+        //key： item元素与sum之差，value： 差出现的次数（相当于元素出现的次数）
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         int count = 0;
         for (int i = 0; i < items.length; i++) {
@@ -30,7 +30,7 @@ class CountSum {
             if (hashMap.containsKey(tmp)) {
                 hashMap.replace(tmp, hashMap.get(tmp) + 1);
             } else {
-                //这里所有不同元素都会被put进来
+                //这里所有不同元素与sum之差都会被put进来
                 hashMap.put(tmp, 1);
             }
             //只有一个数时继续
@@ -39,10 +39,10 @@ class CountSum {
             }
             Integer integer = hashMap.get(items[i]);
             if ((integer) != null) {
-                    //删除一对相加等于sum的两个数
-                    removeOrMinus(hashMap,items[i],integer);
-                    removeOrMinus(hashMap,sum - items[i],integer);
-                    count++;
+                //删除一对相加等于sum的两个数
+                removeOrMinus(hashMap,items[i],integer);
+                removeOrMinus(hashMap,sum - items[i],integer);
+                count++;
             }
         }
         return count;
