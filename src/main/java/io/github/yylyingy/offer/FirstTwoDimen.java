@@ -15,20 +15,20 @@ package io.github.yylyingy.offer;
 class FirstTwoDimen {
     public static void main(String[] args) {
         int[][] array = {
-                {1,1,2},
-                {2,2,5},
-                {3,3,9}
+                {1, 1, 2},
+                {2, 2, 5},
+                {3, 3, 9}
         };
         System.out.println(array.length);
         System.out.println(array[2].length);
-        System.out.println(search(array,8));
+        System.out.println(search(array, 8));
     }
 
-    static boolean search(int [][] array,int src) {
+    static boolean search(int[][] array, int src) {
         int w = array[0].length;
         int h = array.length;
-        for (int i = 0;i < w ;i ++) {
-            for (int j = 0;j < h ;j ++) {
+        for (int i = 0; i < w; i++) {
+            for (int j = 0; j < h; j++) {
                 if (array[i][j] == src) {
                     return true;
                 }

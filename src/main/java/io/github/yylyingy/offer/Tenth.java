@@ -13,6 +13,7 @@ class Tenth {
     public static void main(String[] args) {
 
     }
+
     //根据找规律，2*1的时候有一种，2*2的时候两种，2*3的时候三种，2*4的时候五种，斐波那契数列
     public static int RectCover(int target) {
         if (target == 0) {
@@ -21,7 +22,7 @@ class Tenth {
         if (target == 1) {
             return 1;
         }
-        if (target == 2 ) {
+        if (target == 2) {
             return 2;
         }
         return RectCover(target - 1) + RectCover(target - 2);

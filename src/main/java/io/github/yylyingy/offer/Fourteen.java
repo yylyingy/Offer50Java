@@ -59,6 +59,7 @@ class Fourteen {
         }
         return i < k ? null : q;
     }
+
     public static class ListNode {
         int val;
         ListNode next = null;

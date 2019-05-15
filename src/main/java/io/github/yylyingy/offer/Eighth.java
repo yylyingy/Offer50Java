@@ -24,7 +24,7 @@ class Eighth {
         if (target == 2) {
             return 2;
         }
-        return JumpFloor(target - 1) + JumpFloor(target +2);
+        return JumpFloor(target - 1) + JumpFloor(target + 2);
     }
 }
 

@@ -15,6 +15,7 @@ class Seventh {
         System.out.println(fab(6));
         System.out.println(f(6));
     }
+
     //递归
     public static int fab(int n) {
         if (n == 0) {
@@ -23,11 +24,11 @@ class Seventh {
         if (n == 1 || n == 2) {
             return 1;
         }
-        return fab(n -1) +fab(n - 2);
+        return fab(n - 1) + fab(n - 2);
     }
 
     //非递归
-    static int f(int n ) {
+    static int f(int n) {
         if (n < 0) {
             return -1;
         }
@@ -40,7 +41,7 @@ class Seventh {
         } else if (n == 2) {
             return behindOfOne + behindOfTwo;
         } else {
-            for (int i = 2;i < n;i ++) {
+            for (int i = 2; i < n; i++) {
                 current = behindOfOne + behindOfTwo;
                 behindOfOne = behindOfTwo;
                 behindOfTwo = current;

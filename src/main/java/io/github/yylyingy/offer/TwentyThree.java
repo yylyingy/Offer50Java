@@ -1,7 +1,6 @@
 package io.github.yylyingy.offer;
 
 
-
 /**
  * <br> ClassName:
  * <br> Description: todo(这里用一句话描述这个类的作用)
@@ -15,8 +14,8 @@ class TwentyThree {
 
     }
 
-    public static boolean VerifySquenceOfBST(int [] sequence) {
-        for (int i = 0;i < sequence.length;i ++) {
+    public static boolean VerifySquenceOfBST(int[] sequence) {
+        for (int i = 0; i < sequence.length; i++) {
 
         }
         return false;

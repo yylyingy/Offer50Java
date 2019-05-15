@@ -14,12 +14,13 @@ class Eleven {
         System.out.println(-1 >>> 2);
         System.out.println(NumberOf1(-1));
     }
+
     public static int NumberOf1(int n) {
         int count = 0;
         while (n != 0) {
             //如果最右边的数为1，则与0000 0000 0000 0001想与后等于一
-            if ((n & 1) == 1 ) {
-                count ++;
+            if ((n & 1) == 1) {
+                count++;
             }
             //算术右移一位,抹除最右边一位
             n = n >>> 1;

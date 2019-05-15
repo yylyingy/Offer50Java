@@ -11,7 +11,7 @@ package io.github.yylyingy.offer;
 //    给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
 class Twelve {
     public static void main(String[] args) {
-        System.out.println(Power(2,-3));
+        System.out.println(Power(2, -3));
     }
 
     public static double Power(double base, int exponent) {
@@ -20,7 +20,7 @@ class Twelve {
         if (exponent < 0) {
             pow = exponent * -1;
         }
-        for (int i = 0;i < pow;i ++) {
+        for (int i = 0; i < pow; i++) {
             result = base * result;
         }
         //一个数的负次幂=1除以这个数的正次幂

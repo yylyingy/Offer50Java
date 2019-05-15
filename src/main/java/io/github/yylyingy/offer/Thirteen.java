@@ -11,28 +11,28 @@ package io.github.yylyingy.offer;
 //    输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
 class Thirteen {
     public static void main(String[] args) {
-        int [] array = {1,2,3,4,5,6,7};
+        int[] array = {1, 2, 3, 4, 5, 6, 7};
         reOrderArray(array);
         System.out.println();
     }
 
-    public static void reOrderArray(int [] array) {
-        for(int i = 0;i < array.length;i ++) {
+    public static void reOrderArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
 //            int tmp = array[i];
             //奇数，
             if (array[i] % 2 != 0) {
-                for (int j = i,k = i;j >= 0;j --) {
+                for (int j = i, k = i; j >= 0; j--) {
                     //偶数
-                   if (array[j] % 2 == 0) {
-                       //记录奇数
-                       int tmp = array[k];
-                       //奇偶交换，k位置赋值偶数，j位置赋值奇数，结果就是奇数向前移动，偶数向后移动，
-                       //当前k所对应的奇数与k对应的偶数之间不会有奇数
-                       array[k] = array[j];
-                       array[j] = tmp;
-                       //下一轮k索引处还为奇数
-                       k = j;
-                   }
+                    if (array[j] % 2 == 0) {
+                        //记录奇数
+                        int tmp = array[k];
+                        //奇偶交换，k位置赋值偶数，j位置赋值奇数，结果就是奇数向前移动，偶数向后移动，
+                        //当前k所对应的奇数与k对应的偶数之间不会有奇数
+                        array[k] = array[j];
+                        array[j] = tmp;
+                        //下一轮k索引处还为奇数
+                        k = j;
+                    }
                 }
             }
         }

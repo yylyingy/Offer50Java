@@ -27,9 +27,10 @@ class Nighth {
         }
         return 2 * JumpFloorII2(target - 1);
     }
+
     public static int JumpFloorII(int target) {
         int sum = 0;
-        for (int i = 0;i < target;i ++) {
+        for (int i = 0; i < target; i++) {
             sum += jumpFloor(i);
         }
         return sum;

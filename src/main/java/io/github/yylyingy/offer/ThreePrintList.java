@@ -17,6 +17,7 @@ class ThreePrintList {
         listNode1.next.next = new ListNode(6);
         print(listNode1);
     }
+
     static ArrayList<Integer> print(ListNode listNode) {
         if (listNode == null) {
             return new ArrayList<>();

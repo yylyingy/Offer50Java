@@ -13,17 +13,18 @@ class TwoReplaceBlank {
     public static void main(String[] args) {
         System.out.println(replaceSpace(new StringBuffer("We Are Happy")));
     }
+
     public static String replaceSpace(StringBuffer str) {
         String src = "%20";
         String blank = " ";
         int srcLen = src.length();
         int index = 0;
         while (index < str.length()) {
-            if (blank.equals(str.substring(index,index + 1))) {
-                str.replace(index,index + 1,src);
+            if (blank.equals(str.substring(index, index + 1))) {
+                str.replace(index, index + 1, src);
                 index += srcLen;
             } else {
-                index ++;
+                index++;
             }
         }
         return str.toString();
