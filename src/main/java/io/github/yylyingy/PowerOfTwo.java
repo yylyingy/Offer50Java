@@ -22,6 +22,6 @@ class PowerOfTwo {
         if(val <=0) {
             return false;
         }
-        return (val & 1) == 0;
+        return (val & -val) == val;
     }
 }
