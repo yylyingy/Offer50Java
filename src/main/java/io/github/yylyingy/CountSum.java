@@ -16,7 +16,7 @@ class CountSum {
 //        int[] items = {1, 5, 1, 1, 99, 1, 99, 99,99};
 //        {1,1,99}
 //        {1,1,99,99}
-        int[] items ={5,8,1,9,10,99,2,3,98,98};
+        int[] items ={5,8,1,9,10,99,2,3,98,98,0,100,-1,101};
         System.out.println(countSum(items, 100));
 
     }
